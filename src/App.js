@@ -137,7 +137,7 @@ function App() {
             />
 
             {/* Router người dùng */}
-            <Route path="/" element={<TrangchuNguoidung />} />
+            <Route path="/traicay" element={<TrangchuNguoidung />} />
             <Route path="/cuahang" element={<Cuahang />} />
             <Route path="/thanhtoan" element={<Thanhtoan />} />
             <Route path="/sanpham/:id" element={<CuahangChitiet />} />
