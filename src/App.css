@@ -1,38 +1,396 @@
-.App {
-  text-align: center;
+.page-header {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./img/cart-page-header-img.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.scroll-to-top {
+  background-color: transparent !important; /* Đảm bảo nền trong suốt */
+  border: none !important; /* Loại bỏ viền */
+  box-shadow: none !important; /* Loại bỏ bóng nếu có */
+}
+.featurs-item {
+  transition: all 0.4s ease-in-out;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.featurs-item:hover {
+  transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Bóng đổ rõ hơn */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.featurs-item .featurs-icon {
+  transition: background-color 0.4s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.featurs-item:hover .featurs-icon {
+  background-color: #f39c12; /* Đổi màu icon khi di chuột */
+}
+
+.featurs-item:hover .featurs-content h5 {
+  color: #f39c12; /* Đổi màu tiêu đề khi di chuột */
+}
+
+.featurs-item:hover .featurs-content p {
+  color: #7f8c8d; /* Đổi màu nội dung khi di chuột */
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Để dropdown xuất hiện ngay dưới nút */
+}
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: "Arvo", serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif');
+  height: 400px;
+  background-position: center;
+ 
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none; 
 }
 
-.App-link {
-  color: #61dafb;
+.bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #ff0099, #493240, #1e3c72, #2a5298, #f46242, #f9d423, #1d2671);
+  background-size: 400% 400%;
+  animation: rise 20s infinite ease-in, colorchange 10s infinite ease-in-out;
+  bottom: -70px; 
+  border-radius: 50%;
+  opacity: 0.7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-500px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) scale(1);
+    opacity: 0.7;
   }
 }
+
+@keyframes colorchange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bubbles li:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 20%;
+  animation-duration: 22s, 20s;
+}
+
+.bubbles li:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 40%;
+  animation-duration: 24s, 22s;
+}
+
+.bubbles li:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 60%;
+  animation-duration: 26s, 24s;
+}
+
+.bubbles li:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  left: 80%;
+  animation-duration: 28s, 26s;
+}
+
+.bubbles li:nth-child(6) {
+  width: 50px;
+  height: 50px;
+  left: 10%;
+  animation-duration: 30s, 28s;
+}
+
+.bubbles li:nth-child(7) {
+  width: 100px;
+  height: 100px;
+  left: 30%;
+  animation-duration: 32s, 30s;
+}
+
+.bubbles li:nth-child(8) {
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  animation-duration: 34s, 32s;
+}
+
+.bubbles li:nth-child(9) {
+  width: 40px;
+  height: 40px;
+  left: 70%;
+  animation-duration: 36s, 34s;
+}
+
+.bubbles li:nth-child(10) {
+  width: 90px;
+  height: 90px;
+  left: 90%;
+  animation-duration: 38s, 36s;
+}
+
+/* 
+hiệu ứng luồng sáng chạy qua các chữ ở trang chủ user */
+.glowing-text {
+  font-size: 3rem; /* Tăng kích thước cho nổi bật hơn */
+  font-weight: 800; /* Đậm chữ để làm nổi bật */
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #ff7e5f,
+    #feb47b,
+    #ff7e5f,
+    #00d2ff,
+    #ff7e5f
+  ); /* Gradient đa màu sắc */
+  background-size: 400% auto; /* Kích thước gradient lớn để hiệu ứng đẹp hơn */
+  background-clip: text;
+  -webkit-background-clip: text; /* Hỗ trợ trình duyệt Webkit */
+  /* text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent; /* Hỗ trợ trình duyệt Webkit */
+  animation: glowing-animation 4s ease-in-out infinite; /* Hiệu ứng động */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Ánh sáng mềm quanh chữ */
+}
+
+/* Tạo hiệu ứng chuyển động ánh sáng */
+@keyframes glowing-animation {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* đặc trưng */
+@keyframes bounce-feature {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-feature {
+  animation: bounce-feature 2s infinite;
+}
+
+.animate-delay-0 {
+  animation-delay: 0s;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* 
+Banners */
+
+/* Cửa hàng */
+/* Hiệu ứng ánh sáng chạy qua chữ */
+.text-animation {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.animated-letter {
+  display: inline-block;
+  position: relative;
+  animation: lightEffect 3s linear infinite;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.animated-letter:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animated-letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.animated-letter:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.animated-letter:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.animated-letter:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.animated-letter:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.animated-letter:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.animated-letter:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+/* Keyframes for light effect */
+@keyframes lightEffect {
+  0% {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    color: #ffeb3b;
+    text-shadow: 4px 4px 8px rgba(255, 235, 59, 0.6);
+  }
+  100% {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+
+/* footer */
+.glowing-text-footer   {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: light-glow 2s infinite linear;
+}
+
+@keyframes light-glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.glowing-subtitle {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: linear-gradient(
+    90deg,
+    #ff9a9e,
+    #fad0c4,
+    #fbc2eb,
+    #a6c1ee,
+    #84fab0,
+    #ff9a9e
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: color-shimmer 3s infinite linear;
+  letter-spacing: 1px;
+}
+
+@keyframes color-shimmer {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
